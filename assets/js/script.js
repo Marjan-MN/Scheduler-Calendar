@@ -2,28 +2,21 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var timeDisplayEl = $('#currentDay');
-//////var updateLocale = ('dayjs/plugin/updateLocale')
-// dayjs.extend(updateLocale)
-
-// dayjs.updateLocale('en', {
-//   months : [weekdays]
-// })
-// dayjs.extend(updateLocale)
-
-// dayjs.updateLocale('en', {
-//   weekdays: [
-//     "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-//   ]
-/////// })
+var saveBtn = $("#saveBtn")
 
 // handle displaying the time
 function displayTime() {
-  var rightNow = dayjs().format('MMM DD, YYYY');
+  console.log("Current day!")
+  var rightNow = dayjs().format('dddd, MMM DD, YYYY');
   
     timeDisplayEl.text(rightNow);
    
 }
 displayTime()
+
+saveBtn.on('click', function () {
+  console.log("save your scheduler")
+});
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
