@@ -1,6 +1,30 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var timeDisplayEl = $('#currentDay');
+//////var updateLocale = ('dayjs/plugin/updateLocale')
+// dayjs.extend(updateLocale)
+
+// dayjs.updateLocale('en', {
+//   months : [weekdays]
+// })
+// dayjs.extend(updateLocale)
+
+// dayjs.updateLocale('en', {
+//   weekdays: [
+//     "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+//   ]
+/////// })
+
+// handle displaying the time
+function displayTime() {
+  var rightNow = dayjs().format('MMM DD, YYYY');
+  
+    timeDisplayEl.text(rightNow);
+   
+}
+displayTime()
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
