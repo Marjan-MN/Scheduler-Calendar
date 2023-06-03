@@ -3,19 +3,27 @@
 // in the html.
 var timeDisplayEl = $('#currentDay');
 var saveBtn = $("#saveBtn")
-
+  //Added code to display the current date in the header of the page.
 // handle displaying the time
 function displayTime() {
   console.log("Current day!")
   var rightNow = dayjs().format('dddd, MMM DD, YYYY');
-  
     timeDisplayEl.text(rightNow);
-   
 }
 displayTime()
 
-saveBtn.on('click', function () {
-  console.log("save your scheduler")
+function scheduleFromStorage() {
+  var schedule = localStorage.getItem('schedule');
+  if (schedule) {
+    schedule = JSON.parse(schedule);
+  return schedule;
+}
+}
+// set the saved schdules in localStorage
+saveBtn.on('click', function (event) {
+  console.log("save your schedule", event.target)
+  $('col-8 col-md-10 description').siblings(event)
+    localStorage.setItem('schedule', JSON.stringify(event));
 });
 
 $(function () {
@@ -36,5 +44,5 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+
 });

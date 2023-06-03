@@ -20,7 +20,7 @@ The first step is to install the Visual Studio Code on your local system. Then i
 ## Mockup
 ### Screenshot
 
-![The code quiz webpage includes a ](./assets/images/screenShot.png)
+![The Calendar Application webpage includes a button to save events for each hour of the day ](./assets/images/screenShot.png)
 
 ## Credits
 
